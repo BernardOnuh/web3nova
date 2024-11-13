@@ -6,7 +6,7 @@ const Hero = () => {
       {/* Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 pt-20">
         {/* Hero Text */}
-        <div className="text-center my-20">
+        <div className="text-center my-10 md:my-20">
         <div className="mb-4">
             <h1 className="text-3xl md:text-[56px] font-semibold opacity-0 animate-fadeInDown">
               <span className="inline-block py-2 bg-gradient-to-r from-[#4FA0E3] to-[#155284] bg-clip-text text-transparent [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] [background-clip:text]">
