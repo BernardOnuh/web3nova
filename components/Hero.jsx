@@ -7,22 +7,20 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 pt-20">
         {/* Hero Text */}
         <div className="text-center my-20">
-        <div className="w-full flex justify-center">
-            <h1 className="text-3xl md:text-[56px] py-2 font-semibold leading-tight relative opacity-0 animate-fadeInDown">
-              <span className="absolute inset-0 bg-gradient-to-r from-[#4FA0E3] to-[#155284] bg-clip-text text-transparent">
+        <div className="mb-4">
+            <h1 className="text-3xl md:text-[56px] font-semibold opacity-0 animate-fadeInDown">
+              <span className="inline-block py-2 bg-gradient-to-r from-[#4FA0E3] to-[#155284] bg-clip-text text-transparent [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] [background-clip:text]">
                 Learn, Build and Network
               </span>
-              <span className="invisible">Learn, Build and Network</span>
             </h1>
           </div>
 
-          {/* Second heading with optimized gradient */}
-          <div className="w-full flex justify-center">
-            <h2 className="text-3xl md:text-[56px] py-2 font-semibold leading-tight relative opacity-0 animate-fadeInDown animation-delay-200">
-              <span className="absolute inset-0 bg-gradient-to-r from-[#4FA0E3] to-[#155284] bg-clip-text text-transparent">
+          {/* Second heading - simplified and more reliable approach */}
+          <div className="mb-8">
+            <h2 className="text-3xl md:text-[56px] font-semibold opacity-0 animate-fadeInDown animation-delay-200">
+              <span className="inline-block py-2 bg-gradient-to-r from-[#4FA0E3] to-[#155284] bg-clip-text text-transparent [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] [background-clip:text]">
                 at Web3Nova
               </span>
-              <span className="invisible">at Web3Nova</span>
             </h2>
           </div>
           <p className="text-gray-600 dark:text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-8 opacity-0 animate-fadeInDown animation-delay-400">
