@@ -152,7 +152,7 @@ const TestimonialsSection = () => {
                 {/* Testimonial Content */}
                 <div className="text-center">
                   <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl mb-8">
-                    "{testimonials[currentTestimonial].text}"
+                   &#34;{testimonials[currentTestimonial].text}&#34;
                   </p>
                   
                   <div className="flex items-center justify-center">
