@@ -8,7 +8,7 @@ const InfinitePartnerScroll = () => {
     { name: 'arbitrum', lightIcon: '/arbitrum.svg', darkIcon: '/arbitrumw.svg', twitter: 'https://x.com/arbitrum?s=21' },
     { name: 'base', lightIcon: '/base.svg', darkIcon: '/base.svg', twitter: 'https://x.com/base?s=21' },
     { name: 'optimism', lightIcon: '/optimism.svg', darkIcon: '/optimism.svg', twitter: 'https://x.com/optimism?s=21' },
-    { name: 'Lisk', lightIcon: '/lisk.svg', darkIcon: '/liskw.svg', twitter: 'https://x.com/liskhq?s=21' },
+    { name: 'Lisk', lightIcon: '/lisk.svg', darkIcon: '/Liskw.svg', twitter: 'https://x.com/liskhq?s=21' },
     { name: 'scroll', lightIcon: '/scroll.svg', darkIcon: '/scrollw.svg', twitter: 'https://x.com/scroll_zkp?s=21' },
     { name: 'sui', lightIcon: '/sui.svg', darkIcon: '/sui.svg', twitter: 'https://x.com/suinetwork?s=21' },
     { name: 'solana', lightIcon: '/solana.svg', darkIcon: '/solanaw.svg', twitter: 'https://x.com/solana?s=21' },

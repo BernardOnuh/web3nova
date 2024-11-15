@@ -1,13 +1,27 @@
 import React from 'react';
 
 const Hero = () => {
+  // Get viewport width to adjust animation timing
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-200 overflow-hidden">
       {/* Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 pt-20">
         {/* Hero Text */}
         <div className="text-center my-10 md:my-20">
-        <div className="mb-4">
+          <div className="mb-4">
             <h1 className="text-3xl md:text-[56px] font-semibold opacity-0 animate-fadeInDown">
               <span className="inline-block py-2 bg-gradient-to-r from-[#4FA0E3] to-[#155284] bg-clip-text text-transparent [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] [background-clip:text]">
                 Learn, Build and Network
@@ -15,7 +29,6 @@ const Hero = () => {
             </h1>
           </div>
 
-          {/* Second heading - simplified and more reliable approach */}
           <div className="mb-8">
             <h2 className="text-3xl md:text-[56px] font-semibold opacity-0 animate-fadeInDown animation-delay-200">
               <span className="inline-block py-2 bg-gradient-to-r from-[#4FA0E3] to-[#155284] bg-clip-text text-transparent [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] [background-clip:text]">
@@ -49,7 +62,6 @@ const Hero = () => {
               strokeDasharray="8 8"
             />
             
-            {/* Updated gradient for full width */}
             <defs>
               <linearGradient 
                 id="paint0_linear_63_396" 
@@ -65,7 +77,7 @@ const Hero = () => {
               </linearGradient>
             </defs>
 
-            {/* Animated Images - Larger Size */}
+            {/* Animated Images with adjusted timing for mobile */}
             <g className="moving-image-1">
               <circle 
                 r="4" 
@@ -73,21 +85,21 @@ const Hero = () => {
                 className="animate-pulse"
               >
                 <animateMotion
-                  dur="20s"
+                  dur={isMobile ? "15s" : "20s"}
                   repeatCount="indefinite"
                   path="M-100 50C57.1933 69.2966 218.539 125.679 149.066 190.746C-37.7751 272.081 -8.75551 416.728 278.497 363.574C565.75 310.42 940.694 118.364 1366.92 250.245C1727.9 355.75 1831.05 408.385 2020 421.515"
                 />
               </circle>
               <image
                 href="/student.svg"
-                width="150"
-                height="150"
-                x="-48"
-                y="-48"
+                width={isMobile ? "100" : "150"}
+                height={isMobile ? "100" : "150"}
+                x={isMobile ? "-32" : "-48"}
+                y={isMobile ? "-32" : "-48"}
                 className="rounded-full image-shadow"
               >
                 <animateMotion
-                  dur="20s"
+                  dur={isMobile ? "15s" : "20s"}
                   repeatCount="indefinite"
                   path="M-100 50C57.1933 69.2966 218.539 125.679 149.066 190.746C-37.7751 272.081 -8.75551 416.728 278.497 363.574C565.75 310.42 940.694 118.364 1366.92 250.245C1727.9 355.75 1831.05 408.385 2020 421.515"
                 />
@@ -101,25 +113,25 @@ const Hero = () => {
                 className="animate-pulse"
               >
                 <animateMotion
-                  dur="20s"
+                  dur={isMobile ? "15s" : "20s"}
                   repeatCount="indefinite"
                   path="M-100 50C57.1933 69.2966 218.539 125.679 149.066 190.746C-37.7751 272.081 -8.75551 416.728 278.497 363.574C565.75 310.42 940.694 118.364 1366.92 250.245C1727.9 355.75 1831.05 408.385 2020 421.515"
-                  begin="6.6s"
+                  begin={isMobile ? "5s" : "6.6s"}
                 />
               </circle>
               <image
                 href="/student1.svg"
-                width="150"
-                height="150"
-                x="-48"
-                y="-48"
+                width={isMobile ? "100" : "150"}
+                height={isMobile ? "100" : "150"}
+                x={isMobile ? "-32" : "-48"}
+                y={isMobile ? "-32" : "-48"}
                 className="rounded-full image-shadow"
               >
                 <animateMotion
-                  dur="20s"
+                  dur={isMobile ? "10s" : "15s"}
                   repeatCount="indefinite"
                   path="M-100 50C57.1933 69.2966 218.539 125.679 149.066 190.746C-37.7751 272.081 -8.75551 416.728 278.497 363.574C565.75 310.42 940.694 118.364 1366.92 250.245C1727.9 355.75 1831.05 408.385 2020 421.515"
-                  begin="6.6s"
+                  begin={isMobile ? "5s" : "6.6s"}
                 />
               </image>
             </g>
@@ -131,25 +143,25 @@ const Hero = () => {
                 className="animate-pulse"
               >
                 <animateMotion
-                  dur="20s"
+                  dur={isMobile ? "10s" : "20s"}
                   repeatCount="indefinite"
                   path="M-100 50C57.1933 69.2966 218.539 125.679 149.066 190.746C-37.7751 272.081 -8.75551 416.728 278.497 363.574C565.75 310.42 940.694 118.364 1366.92 250.245C1727.9 355.75 1831.05 408.385 2020 421.515"
-                  begin="13.3s"
+                  begin={isMobile ? "10s" : "13.3s"}
                 />
               </circle>
               <image
                 href="/student2.svg"
-                width="150"
-                height="150"
-                x="-48"
-                y="-48"
+                width={isMobile ? "100" : "150"}
+                height={isMobile ? "100" : "150"}
+                x={isMobile ? "-32" : "-48"}
+                y={isMobile ? "-32" : "-48"}
                 className="rounded-full image-shadow"
               >
                 <animateMotion
-                  dur="20s"
+                  dur={isMobile ? "10s" : "20s"}
                   repeatCount="indefinite"
                   path="M-100 50C57.1933 69.2966 218.539 125.679 149.066 190.746C-37.7751 272.081 -8.75551 416.728 278.497 363.574C565.75 310.42 940.694 118.364 1366.92 250.245C1727.9 355.75 1831.05 408.385 2020 421.515"
-                  begin="13.3s"
+                  begin={isMobile ? "10s" : "13.3s"}
                 />
               </image>
             </g>
