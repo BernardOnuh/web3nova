@@ -38,16 +38,16 @@ const TestimonialsSection = () => {
 
   const stats = [
     {
-      number: "1000+",
+      number: "150+",
       text: "Student have been introduced to blockchain"
     },
     {
-      number: "1000+",
-      text: "Student have been introduced to blockchain"
+      number: "30+",
+      text: "Projects Built Accross the blockchain"
     },
     {
-      number: "1000+",
-      text: "Student have been introduced to blockchain"
+      number: "10+",
+      text: "Cohorts and Events at Web3Nova"
     }
   ];
 
@@ -260,9 +260,7 @@ const TestimonialsSection = () => {
               key={index}
               className="bg-[#2388DA] rounded-2xl p-8 text-center text-white"
             >
-              <div className="flex justify-center mb-4">
-                <Users className="w-8 h-8" />
-              </div>
+             
               <h3 className="text-4xl font-bold mb-2">{stat.number}</h3>
               <p className="text-sm opacity-90">{stat.text}</p>
             </div>

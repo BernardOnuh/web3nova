@@ -128,7 +128,7 @@ const Hero = () => {
                 className="rounded-full image-shadow"
               >
                 <animateMotion
-                  dur={isMobile ? "10s" : "15s"}
+                  dur={isMobile ? "10s" : "20s"}
                   repeatCount="indefinite"
                   path="M-100 50C57.1933 69.2966 218.539 125.679 149.066 190.746C-37.7751 272.081 -8.75551 416.728 278.497 363.574C565.75 310.42 940.694 118.364 1366.92 250.245C1727.9 355.75 1831.05 408.385 2020 421.515"
                   begin={isMobile ? "5s" : "6.6s"}
@@ -137,18 +137,7 @@ const Hero = () => {
             </g>
 
             <g className="moving-image-3">
-              <circle 
-                r="4" 
-                fill="white" 
-                className="animate-pulse"
-              >
-                <animateMotion
-                  dur={isMobile ? "10s" : "20s"}
-                  repeatCount="indefinite"
-                  path="M-100 50C57.1933 69.2966 218.539 125.679 149.066 190.746C-37.7751 272.081 -8.75551 416.728 278.497 363.574C565.75 310.42 940.694 118.364 1366.92 250.245C1727.9 355.75 1831.05 408.385 2020 421.515"
-                  begin={isMobile ? "10s" : "13.3s"}
-                />
-              </circle>
+
               <image
                 href="/student2.svg"
                 width={isMobile ? "100" : "150"}
