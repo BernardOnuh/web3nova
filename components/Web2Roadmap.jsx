@@ -37,7 +37,7 @@ const RoadmapSection = () => {
         {/* Roadmap Grid */}
         <div className="relative">
           {/* Background Card */}
-          <div className="absolute inset-0 bg-[#4FA0E3]/20 dark:bg-[#4FA0E3]/10 rounded-3xl transform -skew-y-2" />
+          <div className="absolute inset-0 bg-[#2388DA] dark:bg-[#4FA0E3]/10 rounded-3xl " />
           
           {/* Content Grid */}
           <div className="relative grid md:grid-cols-2 gap-12 md:gap-16 p-8 md:p-12">

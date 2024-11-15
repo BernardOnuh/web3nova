@@ -6,6 +6,10 @@ import PartnerCarousel from "../components/Partners";
 import TestimonialsSection from "../components/Testimonials";
 import Web3Roadmap from "../components/Web3Educate";
 import RoadmapSection from "../components/Web2Roadmap";
+import CommunitySection from "../components/CommunitySection";
+import FAQSection from "../components/Frequently";
+import Footer from "../components/Footer";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -26,6 +30,9 @@ export default function Home() {
     <TestimonialsSection/>
     <Web3Roadmap/>
     <RoadmapSection/>
+    <CommunitySection/>
+    <FAQSection/>
+    <Footer/>
    </div>
   );
 }
