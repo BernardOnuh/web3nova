@@ -2,6 +2,8 @@ import Image from "next/image";
 import localFont from "next/font/local";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
+import PartnerCarousel from "../components/Partners";
+import TestimonialsSection from "../components/Testimonials";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -18,6 +20,8 @@ export default function Home() {
    <div>
     <Header/>
     <Hero/>
+    <PartnerCarousel/>
+    <TestimonialsSection/>
    </div>
   );
 }
