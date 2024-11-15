@@ -1,15 +1,17 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const router = useRouter();
 
   const menuItems = [
     { label: 'Home', href: '/' },
     { label: 'Trainings', href: '/training' },
-    { label: 'Courses', href: '/courses' },
+    { label: 'Cohorts', href: '/cohorts' },
     { label: 'About Us', href: '/about-us' },
     { label: 'DApps', href: '/dapps' },
     { label: 'Blogs', href: '/blogs' },
@@ -47,26 +49,31 @@ const Header = () => {
     localStorage.setItem('theme', newDarkMode ? 'dark' : 'light');
   };
 
+  const isActive = (path) => router.pathname === path;
+
   return (
     <>
       <header className="w-full shadow-sm bg-gradient-to-br pt-5 from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-200 relative z-50">
         <nav className="max-w-7xl mx-auto px-4 py-2">
           <div className="flex items-center justify-between">
-            {/* Logo/Brand */}
-            <div className="text-xl font-bold text-gray-900 dark:text-white transition-colors">
+            <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white transition-colors">
               Logo
-            </div>
+            </Link>
 
-            {/* Desktop Navigation - Centered */}
+            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center justify-center bg-[#E9F3FB] dark:bg-gray-800 border-2 border-[#2388DA] dark:border-blue-600 rounded-[16px] flex-1 py-4 mx-[12vw]">
               {menuItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
                   href={item.href}
-                  className="px-4 text-[#040E16] dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200"
+                  className={`px-4 transition-colors duration-200 ${
+                    isActive(item.href)
+                      ? 'text-[#2388DA] dark:text-blue-400 font-semibold'
+                      : 'text-[#040E16] dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400'
+                  }`}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </div>
 
@@ -96,7 +103,7 @@ const Header = () => {
         </nav>
       </header>
 
-      {/* Mobile Navigation Overlay */}
+      {/* Mobile Navigation */}
       <div
         className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 md:hidden z-40 ${
           isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
@@ -104,13 +111,11 @@ const Header = () => {
         onClick={() => setIsMenuOpen(false)}
       />
 
-      {/* Mobile Navigation Drawer */}
       <div
         className={`fixed top-0 right-0 w-64 h-full bg-white dark:bg-gray-800 shadow-lg transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        {/* Close Button */}
         <button
           onClick={() => setIsMenuOpen(false)}
           className="absolute top-4 right-4 p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors duration-200"
@@ -119,17 +124,20 @@ const Header = () => {
           <X className="w-6 h-6 text-gray-600 dark:text-gray-200" />
         </button>
 
-        {/* Menu Items */}
         <div className="flex flex-col pt-20 px-6">
           {menuItems.map((item) => (
-            <a
+            <Link
               key={item.label}
               href={item.href}
-              className="text-gray-600 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200 py-3 border-b border-gray-100 dark:border-gray-700"
+              className={`py-3 border-b border-gray-100 dark:border-gray-700 transition-colors duration-200 ${
+                isActive(item.href)
+                  ? 'text-[#2388DA] dark:text-blue-400 font-semibold'
+                  : 'text-gray-600 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400'
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
       </div>
