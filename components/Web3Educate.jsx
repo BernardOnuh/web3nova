@@ -88,6 +88,7 @@ const Web3Roadmap = () => {
                 className="dark:opacity-75"
                 strokeDasharray="4000"
                 strokeDashoffset="4000"
+                style={{ zIndex: 0 }}
               >
                 <animate
                   attributeName="stroke-dashoffset"
@@ -163,7 +164,7 @@ const Web3Roadmap = () => {
           </div>
 
           {/* Roadmap Grid */}
-          <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 gap-x-4 md:gap-x-8 gap-y-16 md:gap-y-32 p-4">
+          <div className="relative grid grid-cols-2 md:grid-cols-3 gap-x-4 md:gap-x-8 gap-y-16 md:gap-y-32 p-4">
             {roadmapItems.map((item, index) => (
               <div
                 key={index}
@@ -172,7 +173,7 @@ const Web3Roadmap = () => {
                 }`}
               >
                 <div className="flex flex-col items-center gap-4">
-                  <div className="bg-white dark:bg-gray-800 p-4 rounded-full shadow-lg transition-transform hover:scale-110">
+                  <div className="bg-white dark:bg-gray-800 p-4 rounded-full shadow-lg transition-transform hover:scale-110 z-0 relative">
                     <div className="w-12 h-12 md:w-16 md:h-16 relative">
                       <Image
                         src={item.icon}
@@ -182,7 +183,7 @@ const Web3Roadmap = () => {
                       />
                     </div>
                   </div>
-                  <span className="z-10 text-base md:text-xl font-medium text-gray-800 dark:text-gray-200 text-center">
+                  <span className="relative z-20 text-base md:text-xl font-medium text-gray-800 dark:text-gray-200 text-center bg-white/90 dark:bg-gray-900/90 px-2 rounded-lg backdrop-blur-sm">
                     {item.title}
                   </span>
                 </div>
