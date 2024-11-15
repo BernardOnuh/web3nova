@@ -4,6 +4,8 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import PartnerCarousel from "../components/Partners";
 import TestimonialsSection from "../components/Testimonials";
+import Web3Roadmap from "../components/Web3Educate";
+import RoadmapSection from "../components/Web2Roadmap";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -22,6 +24,8 @@ export default function Home() {
     <Hero/>
     <PartnerCarousel/>
     <TestimonialsSection/>
+    <Web3Roadmap/>
+    <RoadmapSection/>
    </div>
   );
 }
