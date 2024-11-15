@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Users } from 'lucide-react';
 import Image from 'next/image';
 
@@ -6,6 +6,7 @@ const TestimonialsSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+  const [swipeOffset, setSwipeOffset] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
   const testimonials = [
@@ -53,20 +54,28 @@ const TestimonialsSection = () => {
   const nextTestimonial = () => {
     if (!isAnimating) {
       setIsAnimating(true);
-      setCurrentTestimonial((prev) => 
-        prev === testimonials.length - 1 ? 0 : prev + 1
-      );
-      setTimeout(() => setIsAnimating(false), 500);
+      setSwipeOffset(-100);
+      setTimeout(() => {
+        setCurrentTestimonial((prev) => 
+          prev === testimonials.length - 1 ? 0 : prev + 1
+        );
+        setSwipeOffset(0);
+        setIsAnimating(false);
+      }, 300);
     }
   };
 
   const prevTestimonial = () => {
     if (!isAnimating) {
       setIsAnimating(true);
-      setCurrentTestimonial((prev) => 
-        prev === 0 ? testimonials.length - 1 : prev - 1
-      );
-      setTimeout(() => setIsAnimating(false), 500);
+      setSwipeOffset(100);
+      setTimeout(() => {
+        setCurrentTestimonial((prev) => 
+          prev === 0 ? testimonials.length - 1 : prev - 1
+        );
+        setSwipeOffset(0);
+        setIsAnimating(false);
+      }, 300);
     }
   };
 
@@ -75,7 +84,13 @@ const TestimonialsSection = () => {
   };
 
   const handleTouchMove = (e) => {
-    setTouchEnd(e.touches[0].clientX);
+    if (!touchStart) return;
+    
+    const currentTouch = e.touches[0].clientX;
+    const diff = touchStart - currentTouch;
+    const offset = Math.min(Math.max(-diff, -100), 100);
+    setSwipeOffset(offset);
+    setTouchEnd(currentTouch);
   };
 
   const handleTouchEnd = () => {
@@ -89,10 +104,16 @@ const TestimonialsSection = () => {
       nextTestimonial();
     } else if (isRightSwipe) {
       prevTestimonial();
+    } else {
+      setSwipeOffset(0); // Reset if not enough to trigger swipe
     }
 
     setTouchStart(null);
     setTouchEnd(null);
+  };
+
+  const getNextIndex = () => {
+    return currentTestimonial === testimonials.length - 1 ? 0 : currentTestimonial + 1;
   };
 
   return (
@@ -119,61 +140,49 @@ const TestimonialsSection = () => {
         {/* Testimonials Carousel */}
         <div className="relative max-w-4xl mx-auto mb-20">
           <div 
-            className="relative overflow-hidden"
+            className="relative overflow-hidden h-[400px]"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           >
+            {/* Current Card */}
             <div 
-              className={`bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12 transform transition-transform duration-500 ease-in-out ${
-                isAnimating ? 'scale-95' : ''
-              }`}
+              className="absolute w-full transform transition-all duration-300 ease-out"
+              style={{
+                transform: `translateX(${swipeOffset}%) rotate(${swipeOffset * 0.1}deg)`,
+                zIndex: 20,
+              }}
             >
-              <div className="relative">
-                {/* Desktop Navigation Buttons */}
-                <div className="hidden md:block">
-                  <button
-                    onClick={prevTestimonial}
-                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 bg-red-500 hover:bg-red-600 p-3 rounded-full text-white transition-all"
-                    aria-label="Previous testimonial"
-                  >
-                    <ChevronLeft className="w-6 h-6" />
-                  </button>
+              <TestimonialCard testimonial={testimonials[currentTestimonial]} />
+            </div>
 
-                  <button
-                    onClick={nextTestimonial}
-                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 bg-red-500 hover:bg-red-600 p-3 rounded-full text-white transition-all"
-                    aria-label="Next testimonial"
-                  >
-                    <ChevronRight className="w-6 h-6" />
-                  </button>
-                </div>
+            {/* Next Card (Showing underneath) */}
+            <div 
+              className="absolute w-full transform scale-95 opacity-70"
+              style={{
+                zIndex: 10,
+              }}
+            >
+              <TestimonialCard testimonial={testimonials[getNextIndex()]} />
+            </div>
 
-                {/* Testimonial Content */}
-                <div className="text-center">
-                  <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl mb-8">
-                   &#34;{testimonials[currentTestimonial].text}&#34;
-                  </p>
-                  
-                  <div className="flex items-center justify-center">
-                    <Image
-                      src={testimonials[currentTestimonial].avatar}
-                      alt={testimonials[currentTestimonial].author}
-                      width={64}
-                      height={64}
-                      className="rounded-full object-cover"
-                    />
-                    <div className="ml-4 text-left">
-                      <h3 className="font-bold text-gray-900 dark:text-white">
-                        {testimonials[currentTestimonial].author}
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400">
-                        {testimonials[currentTestimonial].role}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            {/* Desktop Navigation Buttons */}
+            <div className="hidden md:block">
+              <button
+                onClick={prevTestimonial}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 bg-red-500 hover:bg-red-600 p-3 rounded-full text-white transition-all z-30"
+                aria-label="Previous testimonial"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+
+              <button
+                onClick={nextTestimonial}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 bg-red-500 hover:bg-red-600 p-3 rounded-full text-white transition-all z-30"
+                aria-label="Next testimonial"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
             </div>
           </div>
 
@@ -211,5 +220,34 @@ const TestimonialsSection = () => {
     </div>
   );
 };
+
+// Separate card component for better organization
+const TestimonialCard = ({ testimonial }) => (
+  <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12">
+    <div className="text-center">
+      <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl mb-8">
+        &#34;{testimonial.text}&#34;
+      </p>
+      
+      <div className="flex items-center justify-center">
+        <Image
+          src={testimonial.avatar}
+          alt={testimonial.author}
+          width={64}
+          height={64}
+          className="rounded-full object-cover"
+        />
+        <div className="ml-4 text-left">
+          <h3 className="font-bold text-gray-900 dark:text-white">
+            {testimonial.author}
+          </h3>
+          <p className="text-gray-600 dark:text-gray-400">
+            {testimonial.role}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+);
 
 export default TestimonialsSection;
