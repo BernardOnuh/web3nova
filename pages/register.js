@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 import { ChevronLeft, ChevronRight, AlertCircle } from 'lucide-react';
 import Header from '../components/Header';
 import { Country, State, City } from 'country-state-city';
@@ -21,10 +20,10 @@ const CustomAlert = ({ children, variant = 'default' }) => {
 const CustomAlertDescription = ({ children }) => <span className="flex-1">{children}</span>;
 
 const TrainingForm = () => {
-  const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const [formData, setFormData] = useState({
     courseType: '',
     fullName: '',
@@ -78,10 +77,8 @@ const TrainingForm = () => {
         break;
     }
     setErrors(newErrors);
-    console.log('Errors:', newErrors); // Debugging line
     return Object.keys(newErrors).length === 0;
   };
-  
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -92,20 +89,19 @@ const TrainingForm = () => {
     if (errors[name]) setErrors((prev) => ({ ...prev, [name]: undefined }));
   };
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     // Validate current step
     if (!validateStep(currentStep)) {
       return; // Stop progression if validation fails
     }
-  
+
     if (currentStep < 3) {
       setCurrentStep((prev) => prev + 1); // Go to the next step
       return;
     }
-  
+
     // Final submission
     if (currentStep === 3) {
       setIsSubmitting(true);
@@ -115,15 +111,15 @@ const TrainingForm = () => {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData), // Directly sending formData object
         });
-  
+
         if (!response.ok) {
           const errorData = await response.json(); // Attempt to parse the error response
           throw new Error(errorData.message || 'Registration failed');
         }
-  
+
         // If successful
         localStorage.removeItem('trainingFormData');
-        router.push('/training/success');
+        setIsSuccess(true); // Show success message
       } catch (error) {
         setErrors((prev) => ({
           ...prev,
@@ -134,12 +130,11 @@ const TrainingForm = () => {
       }
     }
   };
-  
-  
 
-  const renderError = (fieldName) => errors[fieldName] && (
-    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors[fieldName]}</p>
-  );
+  const renderError = (fieldName) =>
+    errors[fieldName] && (
+      <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors[fieldName]}</p>
+    );
 
   const renderCourseSelection = () => (
     <div className="space-y-6">
@@ -277,29 +272,29 @@ const TrainingForm = () => {
                     {city.name}
                   </option>
                 ))}
-              </select> 
+              </select>
               {renderError('city')}
             </div>
           )}
           <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Gender *</label>
-          <div className="flex items-center gap-4">
-            {['Male', 'Female', 'Other'].map((option) => (
-              <label key={option} className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  name="gender"
-                  value={option}
-                  checked={formData.gender === option}
-                  onChange={handleInputChange}
-                  className="w-4 h-4 text-blue-600 dark:text-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400"
-                />
-                <span className="text-gray-700 dark:text-gray-200">{option}</span>
-              </label>
-            ))}
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Gender *</label>
+            <div className="flex items-center gap-4">
+              {['Male', 'Female', 'Other'].map((option) => (
+                <label key={option} className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="gender"
+                    value={option}
+                    checked={formData.gender === option}
+                    onChange={handleInputChange}
+                    className="w-4 h-4 text-blue-600 dark:text-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400"
+                  />
+                  <span className="text-gray-700 dark:text-gray-200">{option}</span>
+                </label>
+              ))}
+            </div>
+            {renderError('gender')}
           </div>
-          {renderError('gender')}
-        </div>
         </div>
       </div>
     );
@@ -355,7 +350,7 @@ const TrainingForm = () => {
               className="w-4 h-4 text-blue-600 dark:text-blue-400"
             />
             <span className="ml-2 text-sm text-gray-700 dark:text-gray-200">
-              I confirm that I have access to my wallet's secret key.
+              I confirm that I have access to my wallet&apos;s secret key.
             </span>
           </label>
           {renderError('hasSecretKey')}
@@ -364,43 +359,51 @@ const TrainingForm = () => {
     </div>
   );
 
-
   return (
     <div>
       <Header />
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
-          <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 shadow-xl rounded-lg p-8">
-            {errors.submit && (
-              <CustomAlert variant="destructive" className="mb-6">
-                <AlertCircle className="h-4 w-4" />
-                <CustomAlertDescription>{errors.submit}</CustomAlertDescription>
-              </CustomAlert>
-            )}
-            {currentStep === 1 && renderCourseSelection()}
-            {currentStep === 2 && renderPersonalInfo()}
-            {currentStep === 3 && renderOtherInfo()}
-            <div className="mt-8 flex justify-between">
-              {currentStep > 1 && (
-                <button
-                  type="button"
-                  onClick={() => setCurrentStep((prev) => prev - 1)}
-                  className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
-                >
-                  Previous
-                </button>
+          {isSuccess ? (
+            <CustomAlert variant="success">
+              <AlertCircle className="h-4 w-4" />
+              <CustomAlertDescription>
+                Registration successful! Thank you for joining the training program.
+              </CustomAlertDescription>
+            </CustomAlert>
+          ) : (
+            <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 shadow-xl rounded-lg p-8">
+              {errors.submit && (
+                <CustomAlert variant="destructive" className="mb-6">
+                  <AlertCircle className="h-4 w-4" />
+                  <CustomAlertDescription>{errors.submit}</CustomAlertDescription>
+                </CustomAlert>
               )}
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className={`px-4 py-2 rounded-md text-white ${
-                  isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
-                }`}
-              >
-                {isSubmitting ? 'Processing...' : currentStep === 3 ? 'Submit Registration' : 'Next'}
-              </button>
-            </div>
-          </form>
+              {currentStep === 1 && renderCourseSelection()}
+              {currentStep === 2 && renderPersonalInfo()}
+              {currentStep === 3 && renderOtherInfo()}
+              <div className="mt-8 flex justify-between">
+                {currentStep > 1 && (
+                  <button
+                    type="button"
+                    onClick={() => setCurrentStep((prev) => prev - 1)}
+                    className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
+                  >
+                    Previous
+                  </button>
+                )}
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`px-4 py-2 rounded-md text-white ${
+                    isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+                  }`}
+                >
+                  {isSubmitting ? 'Processing...' : currentStep === 3 ? 'Submit Registration' : 'Next'}
+                </button>
+              </div>
+            </form>
+          )}
         </div>
       </div>
     </div>
