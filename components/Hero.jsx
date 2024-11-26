@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Hero = () => {
   // Get viewport width to adjust animation timing
@@ -41,9 +42,11 @@ const Hero = () => {
             by receiving training from industry experts through our 16
             weeks hands on bootcamp.
           </p>
+          <Link href="/register">
           <button className="bg-red-500 hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 active:scale-95 opacity-0 animate-fadeInDown animation-delay-600">
             Join The Next Cohort →
           </button>
+          </Link>
         </div>
 
         {/* SVG Path - Updated for dark mode */}

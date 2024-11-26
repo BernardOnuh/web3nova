@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,7 +16,7 @@ const Header = () => {
     { label: 'About Us', href: '/about-us' },
     { label: 'DApps', href: '/dapps' },
     { label: 'Blogs', href: '/blogs' },
-    { label: 'Career', href: '/career' }
+    { label: 'Contact Us', href: '/contact-us' }
   ];
 
   useEffect(() => {
@@ -57,7 +58,7 @@ const Header = () => {
         <nav className="max-w-7xl mx-auto px-4 py-2">
           <div className="flex items-center justify-between">
             <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white transition-colors">
-              Logo
+              <Image src="/logo.svg" width={100} height={32}/>
             </Link>
 
             {/* Desktop Navigation */}
