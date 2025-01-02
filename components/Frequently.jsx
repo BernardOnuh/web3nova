@@ -6,28 +6,40 @@ const FAQSection = () => {
 
   const faqs = [
     {
-      question: "How long is the blockchain bootcamp?",
-      answer: "Our intensive bootcamp runs for 16 weeks, providing hands-on training from industry experts in blockchain development."
+      question: "What is Web3Nova ",
+      answer:"is a tech company focused on training developers both web2 and web3 developers to achieve there maximum potential."
     },
     {
-      question: "What prerequisites are needed?",
-      answer: "Basic programming knowledge and understanding of web development fundamentals are recommended for the bootcamp."
+      question: "What are the benefits of web3nova",
+      answer: "We educate you from novice to proffessional and help you achieve your maximum potential"
     },
     {
-      question: "What technologies will I learn?",
-      answer: "You'll learn Ethereum, Solidity, Web3.js, and other essential blockchain development tools and frameworks."
+      question: "Can I join web3nova without having any knowledge about blockchain ",
+      answer: "Yes we will educate you on the basics and importance of web3"
     },
     {
-      question: "Is there job placement assistance?",
-      answer: "Yes, we provide career guidance and connect you with our network of blockchain companies and startups."
-    }
+      question: "Is web3nova only for web3 developers ?",
+      answer: "No, we are focused on builders and technical skills providing neccesary resources for you to achieve your maximum potentials."
+    },
+    {
+      question: "Would I get a certificate after the course ?",
+      answer: "Yes, we would provide certificate and also digital certifictes(NFTs)."
+    },
+    {
+      question: "Is web3nova only for web3 developers ?",
+      answer: "No, we are focused on builders and technical skills providing neccesary resources for you to achieve your maximum potentials."
+    },
+    {
+      question: "If I an a total newbie would i be taught the basics ?",
+      answer: "Yes, We educate you from novice to proffessional and help you achieve your maximum potential."
+    },
   ];
 
   return (
     <div className="w-full bg-gradient-to-br from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 py-16">
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#4FA0E3] dark:text-[#4FA0E3]">
+        <h2 className="text-4xl md:text-5xl py-4 font-bold mb-4 bg-gradient-to-r from-[#4FA0E3] to-[#155284] dark:text-white bg-clip-text text-transparent [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] dark:[-webkit-text-fill-color:white]">
             FAQs
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">

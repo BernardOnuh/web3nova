@@ -58,19 +58,24 @@ const Header = () => {
         <nav className="max-w-7xl mx-auto px-4 py-2">
           <div className="flex items-center justify-between">
             <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white transition-colors">
-              <Image src="/logo.svg" width={100} height={32}/>
+              <div className="block dark:hidden">
+                <Image src="/logo.svg" width={100} height={32} alt="Logo Light"/>
+              </div>
+              <div className="hidden dark:block">
+                <Image src="/logo-light.svg" width={100} height={32} alt="Logo Dark"/>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center justify-center bg-[#E9F3FB] dark:bg-gray-800 border-2 border-[#2388DA] dark:border-blue-600 rounded-[16px] flex-1 py-4 mx-[12vw]">
+            <div className="hidden md:flex items-center justify-center bg-[#E9F3FB] dark:bg-gray-200 border-2 border-[#2388DA] dark:border-blue-600 rounded-[16px] flex-1 py-4 mx-[12vw]">
               {menuItems.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
                   className={`px-4 transition-colors duration-200 ${
                     isActive(item.href)
-                      ? 'text-[#2388DA] dark:text-blue-400 font-semibold'
-                      : 'text-[#040E16] dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400'
+                      ? 'text-[#2388DA] dark:text-blue-400 font-bold'
+                      : 'text-[#040E16] dark:text-[#040E16] font-semibold hover:text-blue-500 dark:hover:text-blue-400'
                   }`}
                 >
                   {item.label}

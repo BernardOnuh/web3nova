@@ -11,29 +11,29 @@ const TestimonialsSection = () => {
 
   const testimonials = [
     {
-      text: "Lectus nulla neque ipsum ut laoreet. Neque fames in molestie quam feugiat vitae et elit nibh. Ut malesuada duis donec nec facilisis varius. Quis risus proin neque morbi purus. Pellentesque fringilla quisque tempus sit nec.",
-      author: "Akande Abidemi",
+      text: "My experience during the Based Africa Buildathon wouldn't have been memorable if not for Bernard who guided us al through the way. I can say that my experience was basesome and life changing.",
+      author: "Israel TMD",
+      role: "Product Manager",
+      avatar: "/stundent-1.svg"
+    },
+    {
+      text: "I joined the Base Buildathon for the 30ETH prize 😂🙏. Despite challenges, rain, and my lack of web3 knowledge, we submitted our project with an amazing dev. It was an exciting experience—now I'm officially based 🤍👌.",
+      author: "Blazon",
+      role: "Product Designer",
+      avatar: "/student-2.svg"
+    },
+    {
+      text: "At the Base Africa Buildathon, I met many talented, driven students who inspired me to give my all in the competition. It reminded me that we are all problem solvers capable of tackling any challenge.",
+      author: "Afolabi Anuoluwapo",
+      role: "Frontend Developer",
+      avatar: "/student-3.svg"
+    },
+    {
+      text: "This is my first hackathon, it was enlightening and this has laid a foundation for me to dive into web3 and contribute in Base and other blockchains, I love being based.",
+      author: "John Famoroti",
       role: "Frontend Developer",
       avatar: "/student.svg"
     },
-    {
-      text: "Lectus nulla neque ipsum ut laoreet. Neque fames in molestie quam feugiat vitae et elit nibh. Ut malesuada duis donec nec facilisis varius. Quis risus proin neque morbi purus. Pellentesque fringilla quisque tempus sit nec.",
-      author: "Akande Abidemi",
-      role: "Fronte Developer",
-      avatar: "/student1.svg"
-    },
-    {
-      text: "Lectus nulla neque ipsum ut laoreet. Neque fames in molestie quam feugiat vitae et elit nibh. Ut malesuada duis donec nec facilisis varius. Quis risus proin neque morbi purus. Pellentesque fringilla quisque tempus sit nec.",
-      author: "Akande Abidemi",
-      role: "Frontend Developer",
-      avatar: "/student2.svg"
-    },
-    {
-      text: "Lectus nulla neque ipsum ut laoreet. Neque fames in molestie quam feugiat vitae et elit nibh. Ut malesuada duis donec nec facilisis varius. Quis risus proin neque morbi purus. Pellentesque fringilla quisque tempus sit nec.",
-      author: "Akande Abidemi",
-      role: "Frontend Developer",
-      avatar: "/student.svg"
-    }
   ];
 
   const stats = [
@@ -120,12 +120,11 @@ const TestimonialsSection = () => {
 
   return (
     <div className="w-full bg-gradient-to-br from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 py-16">
-      <div className="max-w-6xl mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl py-4 font-bold mb-4 bg-gradient-to-r from-[#4FA0E3] to-[#155284] inline-block text-transparent bg-clip-text">
-            What our students are saying
-          </h2>
+    <div className="max-w-6xl mx-auto px-4">
+      <div className="text-center mb-12">
+        <h2 className="text-4xl md:text-5xl py-4 font-bold mb-4 bg-gradient-to-r from-[#4FA0E3] to-[#155284] dark:text-white bg-clip-text text-transparent [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] dark:[-webkit-text-fill-color:white]">
+          What our students are saying
+        </h2>
           <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
             Start your career in the Blockchain Development industry by receiving
             training from industry experts through our 16 weeks hands on bootcamp.
@@ -146,7 +145,7 @@ const TestimonialsSection = () => {
           <div className="relative max-w-4xl mx-auto">
             <button
               onClick={prevTestimonial}
-              className="absolute left-0 -translate-x-16 bg-red-500 hover:bg-red-600 p-3 rounded-full text-white transition-all pointer-events-auto"
+              className="absolute left-0 -translate-x-16 dark:bg-[#2388DA] bg-red-500 hover:bg-red-600 p-3 rounded-full text-white transition-all pointer-events-auto"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-6 h-6" />
@@ -154,7 +153,7 @@ const TestimonialsSection = () => {
 
             <button
               onClick={nextTestimonial}
-              className="absolute right-0 translate-x-16 bg-red-500 hover:bg-red-600 p-3 rounded-full text-white transition-all pointer-events-auto"
+              className="absolute right-0 translate-x-16 dark:bg-[#2388DA] bg-red-500 hover:bg-red-600 p-3 rounded-full text-white transition-all pointer-events-auto"
               aria-label="Next testimonial"
             >
               <ChevronRight className="w-6 h-6" />
@@ -245,7 +244,7 @@ const TestimonialsSection = () => {
                 key={index}
                 className={`h-2 w-2 rounded-full transition-all duration-300 ${
                   index === currentTestimonial 
-                    ? 'bg-red-500 w-4' 
+                    ? 'bg-red-500 dark:bg-[#2388DA] w-4' 
                     : 'bg-gray-300 dark:bg-gray-600'
                 }`}
               />

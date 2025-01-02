@@ -3,21 +3,29 @@ import React from 'react';
 const RoadmapSection = () => {
   const roadmapItems = [
     {
-      title: "Introduction to HTML",
-      description: "Nunc non in viverra ultrices odio vitae magna ornare odio. Volutpat tellus nibh neque id sapien egestas. Tincidunt tortor magna."
+      title: "HTML and CSS",
+      description: "Building web foundations with Hypertext Markup Language and Style Sheets."
     },
     {
-      title: "Introduction to HTML",
-      description: "Nunc non in viverra ultrices odio vitae magna ornare odio. Volutpat tellus nibh neque id sapien egestas. Tincidunt tortor magna."
+      title: "Git and Vercel",
+      description: "Version control with Git and deploying web apps on Vercel."
     },
     {
-      title: "Introduction to HTML",
-      description: "Nunc non in viverra ultrices odio vitae magna ornare odio. Volutpat tellus nibh neque id sapien egestas. Tincidunt tortor magna."
+      title: "JavaScript",
+      description: "Programming fundamentals for web development and scripting with JavaScript."
     },
     {
-      title: "Introduction to HTML",
-      description: "Nunc non in viverra ultrices odio vitae magna ornare odio. Volutpat tellus nibh neque id sapien egestas. Tincidunt tortor magna."
-    }
+      title: "Node.js",
+      description: "Building scalable server-side apps with Node.js runtime environment."
+    },
+    {
+      title: "Typescript",
+      description: "Enhancing JavaScript code quality with TypeScript's static typing system."
+    },
+    {
+      title: "React",
+      description: "Building reusable UI components with React JavaScript library efficiently."
+    },
   ];
 
   return (

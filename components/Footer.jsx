@@ -30,20 +30,27 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {/* Logo and Social Section */}
           <div className="md:col-span-3">
-            <div className="mb-6">
-              <Image 
-                src="/logo.svg" 
-                alt="Web3Nova Logo" 
-                width={150} 
-                height={40} 
-                className="dark:invert"
-              />
-            </div>
+          <div className="mb-6">
+            <Image
+              src="/logo.svg"
+              alt="Web3Nova Logo"
+              width={150}
+              height={40}
+              className="dark:hidden"
+            />
+            <Image
+              src="/logo-light.svg"
+              alt="Web3Nova Logo"
+              width={150}
+              height={40}
+              className="hidden dark:block"
+            />
+          </div>
             <div>
               <h3 className="text-gray-600 dark:text-gray-400 mb-4">Connect with us</h3>
               <div className="flex space-x-4">
                 <Link
-                  href="https://twitter.com/web3nova"
+                  href="https://x.com/web3_nova"
                   className="w-10 h-10 rounded-full bg-[#4FA0E3] text-white flex items-center justify-center hover:bg-[#155284] transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"

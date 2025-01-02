@@ -173,7 +173,7 @@ const TrainingForm = () => {
               name="fullName"
               value={formData.fullName}
               onChange={handleInputChange}
-              className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              className="mt-1 block w-full p-2 rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               placeholder="Enter your full name"
             />
             {renderError('fullName')}
@@ -185,7 +185,7 @@ const TrainingForm = () => {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              className="mt-1 block w-full p-2 rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               placeholder="Enter your email address"
             />
             {renderError('email')}
@@ -197,7 +197,7 @@ const TrainingForm = () => {
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
-              className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              className="mt-1 block w-full p-2 rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               placeholder="Enter your phone number"
             />
             {renderError('phone')}
@@ -209,7 +209,7 @@ const TrainingForm = () => {
               name="githubProfile"
               value={formData.githubProfile}
               onChange={handleInputChange}
-              className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              className="mt-1 block w-full p-2 rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               placeholder="Enter your GitHub profile link"
             />
             {renderError('githubProfile')}
@@ -224,7 +224,7 @@ const TrainingForm = () => {
                 handleInputChange({ target: { name: 'state', value: '' } });
                 handleInputChange({ target: { name: 'city', value: '' } });
               }}
-              className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              className="mt-1 block w-full p-2 rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
             >
               <option value="">Select Country</option>
               {countries.map((country) => (
@@ -245,7 +245,7 @@ const TrainingForm = () => {
                   handleInputChange(e);
                   handleInputChange({ target: { name: 'city', value: '' } });
                 }}
-                className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                className="mt-1 block w-full rounded-md p-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               >
                 <option value="">Select State</option>
                 {states.map((state) => (
@@ -264,7 +264,7 @@ const TrainingForm = () => {
                 name="city"
                 value={formData.city || ''}
                 onChange={handleInputChange}
-                className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                className="mt-1 block w-full rounded-md p-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               >
                 <option value="">Select City</option>
                 {cities.map((city) => (
@@ -287,7 +287,7 @@ const TrainingForm = () => {
                     value={option}
                     checked={formData.gender === option}
                     onChange={handleInputChange}
-                    className="w-4 h-4 text-blue-600 dark:text-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400"
+                    className="w-4 h-4 text-blue-600 p-2 dark:text-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400"
                   />
                   <span className="text-gray-700 dark:text-gray-200">{option}</span>
                 </label>
@@ -364,14 +364,29 @@ const TrainingForm = () => {
       <Header />
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
-          {isSuccess ? (
-            <CustomAlert variant="success">
-              <AlertCircle className="h-4 w-4" />
-              <CustomAlertDescription>
-                Registration successful! Thank you for joining the training program.
-              </CustomAlertDescription>
-            </CustomAlert>
-          ) : (
+            {isSuccess ? (
+              <div className="space-y-6">
+                <CustomAlert variant="success">
+                  <AlertCircle className="h-4 w-4" />
+                  <CustomAlertDescription>
+                    Registration successful! Thank you for joining the training program.
+                  </CustomAlertDescription>
+                </CustomAlert>
+                
+                <div className="bg-white dark:bg-gray-800 shadow-xl rounded-lg p-8 text-center">
+                  <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Join Our Community!</h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-6">Stay updated with the latest news and connect with fellow learners</p>
+                  <a 
+                    href="https://chat.whatsapp.com/CuPv6e9N8Rt7cY6gDU82Qp" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="inline-flex items-center px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-medium rounded-lg transition-colors duration-200"
+                  >
+                    Join Web3Nova WhatsApp Group →
+                  </a>
+                </div>
+              </div>
+            ) :  (
             <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 shadow-xl rounded-lg p-8">
               {errors.submit && (
                 <CustomAlert variant="destructive" className="mb-6">
