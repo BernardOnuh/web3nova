@@ -9,20 +9,11 @@ const WhatsAppTable = () => {
 
   const handleWhatsAppRedirect = (user) => {
     const phone = formatPhoneNumber(user.phone);
+    const message = `Hello ${user.fullName}! 👋\n\nCongratulations! You&apos;ve been selected for the Web3Nova Web Development scholarship interview.\n\nInterview Details:\n- Date: Saturday, January 25th, 2025\n- Time: 12:00 noon (arrive by 11:45 AM)\n- Location: Bola International, Stateline, Southgate\n- Duration: 60 minutes\n- Requirements: Bring your laptop\n\nProgram Highlights:\n- Full Web Development & Web3 Development training\n- Course fee: $30/45,000₦\n- Track record: Trained 30+ builders who earned over $10,000 last year\n\nPlease inform us if you need to reschedule. We look forward to meeting you.\n\nBest regards,\nWeb3Nova`;
     
-    // Send image first
-    const imageUrl = encodeURIComponent('/class.jpg');
-    const imageWhatsappUrl = `https://wa.me/${phone}?text=${imageUrl}`;
-    window.open(imageWhatsappUrl, '_blank');
-    
-    // Send text message after small delay
-    setTimeout(() => {
-      const message = `Hello ${user.fullName}! 👋\n\nCongratulations! You&apos;ve been selected for the Web3Nova Web Development scholarship interview.\n\nInterview Details:\n- Date: Saturday, January 25th, 2025\n- Time: 12:00 noon (arrive by 11:45 AM)\n- Location: Bola International, Stateline, Southgate\n- Duration: 60 minutes\n- Requirements: Bring your laptop\n\nProgram Highlights:\n- Full Web Development & Web3 Development training\n- Course fee: $30/45,000₦\n- Track record: Trained 30+ builders who earned over $10,000 last year\n\nPlease inform us if you need to reschedule. We look forward to meeting you.\n\nBest regards,\nWeb3Nova`;
-      
-      const encodedMessage = encodeURIComponent(message);
-      const textWhatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
-      window.open(textWhatsappUrl, '_blank');
-    }, 1000);
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   const formatPhoneNumber = (phone) => {
