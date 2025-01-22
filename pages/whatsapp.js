@@ -11,7 +11,7 @@ const WhatsAppTable = () => {
     const phone = formatPhoneNumber(user.phone);
     
     // Send image first
-    const imageUrl = encodeURIComponent('/images/cohort-banner.jpg');
+    const imageUrl = encodeURIComponent('/class.jpg');
     const imageWhatsappUrl = `https://wa.me/${phone}?text=${imageUrl}`;
     window.open(imageWhatsappUrl, '_blank');
     
