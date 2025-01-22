@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Search } from 'lucide-react';
 
@@ -12,13 +11,13 @@ const WhatsAppTable = () => {
     const phone = formatPhoneNumber(user.phone);
     
     // Send image first
-    const imageUrl = encodeURIComponent('/class.jpg');
+    const imageUrl = encodeURIComponent('/images/cohort-banner.jpg');
     const imageWhatsappUrl = `https://wa.me/${phone}?text=${imageUrl}`;
     window.open(imageWhatsappUrl, '_blank');
     
     // Send text message after small delay
     setTimeout(() => {
-      const message = `Hello ${user.fullName}! 👋\n\nCongratulations! You've been selected for the Web3Nova Web Development scholarship interview.\n\nInterview Details:\n- Date: Saturday, January 25th, 2025\n- Time: 12:00 noon (arrive by 11:45 AM)\n- Location: Bola International, Stateline, Southgate\n- Duration: 60 minutes\n- Requirements: Bring your laptop\n\nProgram Highlights:\n- Full Web Development & Web3 Development training\n- Course fee: $30/45,000₦\n- Track record: Trained 30+ builders who earned over $10,000 last year\n\nPlease inform us if you need to reschedule. We look forward to meeting you.\n\nBest regards,\nWeb3Nova`;
+      const message = `Hello ${user.fullName}! 👋\n\nCongratulations! You&apos;ve been selected for the Web3Nova Web Development scholarship interview.\n\nInterview Details:\n- Date: Saturday, January 25th, 2025\n- Time: 12:00 noon (arrive by 11:45 AM)\n- Location: Bola International, Stateline, Southgate\n- Duration: 60 minutes\n- Requirements: Bring your laptop\n\nProgram Highlights:\n- Full Web Development & Web3 Development training\n- Course fee: $30/45,000₦\n- Track record: Trained 30+ builders who earned over $10,000 last year\n\nPlease inform us if you need to reschedule. We look forward to meeting you.\n\nBest regards,\nWeb3Nova`;
       
       const encodedMessage = encodeURIComponent(message);
       const textWhatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
@@ -81,7 +80,7 @@ const WhatsAppTable = () => {
           <h2 className="text-2xl font-bold text-blue-600 mb-2">Web3Nova First Cohort</h2>
           <p className="text-gray-600 mb-4">
             Learn Web Development and Web3 Development in our 4-month intensive program.
-            We've trained over 30 builders who earned more than $10,000 last year!
+            We&apos;ve trained over 30 builders who earned more than $10,000 last year!
           </p>
           <div className="bg-blue-50 p-4 rounded-md">
             <p className="font-semibold text-blue-800">Program Details:</p>
