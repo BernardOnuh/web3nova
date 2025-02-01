@@ -9,7 +9,7 @@ const WhatsAppTable = () => {
 
   const handleWhatsAppRedirect = (user) => {
     const phone = formatPhoneNumber(user.phone);
-    const message = `Hello ${user.fullName}! 👋\n\nCongratulations! You&apos;ve been selected for the Web3Nova Web Development scholarship interview.\n\nInterview Details:\n- Date: Saturday, January 25th, 2025\n- Time: 12:00 noon (arrive by 11:45 AM)\n- Location: Bola International, Stateline, Southgate\n- Duration: 60 minutes\n- Requirements: Bring your laptop\n\nProgram Highlights:\n- Full Web Development & Web3 Development training\n- Course fee: $30/45,000₦\n- Track record: Trained 30+ builders who earned over $10,000 last year\n\nPlease inform us if you need to reschedule. We look forward to meeting you.\n\nBest regards,\nWeb3Nova`;
+    const message = `Hello ${user.fullName}! 👋\n\nWelcome to Web3Nova! If you're proceeding with us, you can pay your commitment fee and join us weekly:\n\n- Thursday & Friday: 5pm - 9pm\n- Saturday & Sunday: 2pm - 6pm\n\nThis schedule will run for the next 4 months starting from today. Also, don't forget to like, retweet, and comment on this post:\nhttps://x.com/web3_nova/status/1885406092647178367?s=46\n\nWe're excited to have you on board!\n\nBest regards,\nWeb3Nova`;
     
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
@@ -77,7 +77,7 @@ const WhatsAppTable = () => {
             <p className="font-semibold text-blue-800">Program Details:</p>
             <ul className="list-disc ml-6 text-blue-700">
               <li>Professional tutoring and mentorship</li>
-              <li>Commitment Fee: $30/45,000₦</li>
+              <li>Commitment Fee: 15,000₦</li>
               <li>Location: Bola International, Stateline, Southgate</li>
             </ul>
           </div>
