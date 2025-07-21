@@ -15,7 +15,7 @@ const JoinCohort = () => {
         </p>
 
         <a 
-          href="/join"
+          href="https://forms.gle/B3jQSSB8bje1JzTV7"
           className="inline-flex items-center px-8 py-3 bg-[#E94E5C] hover:bg-[#d13848] text-white rounded-full font-medium transition-colors"
         >
           Join The Next Cohort
