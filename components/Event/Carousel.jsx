@@ -4,9 +4,9 @@ import Link from "next/link";
 export default function EventsPatnersCarousel(){
     const eventPatners = [
         { name: 'base', lightIcon: '/base.svg', darkIcon: '/base.svg', twitter: 'https://x.com/base?s=21' },
-        { name: 'avalacne', lightIcon: '/avalanche-logo.png', darkIcon: '/avalanche-logo.png', twitter: 'https://x.com/optimism?s=21' },
-        { name: 'farcaster', lightIcon: '/farcaster-logo.jpg', darkIcon: '/farcaster-logo.jpg', twitter: 'https://x.com/liskhq?s=21' },
-        { name: 'devcon', lightIcon: '/devcon-logo.jpg', darkIcon: '/devcon-logo.jpg', twitter: 'https://x.com/scroll_zkp?s=21' },
+        { name: 'avalacne', lightIcon: '/avalanche-log.png', darkIcon: '/avalanche-log.png', twitter: 'https://x.com/optimism?s=21' },
+        { name: 'farcaster', lightIcon: '/farcaster-log.png', darkIcon: '/farcaster-log.png', twitter: 'https://x.com/liskhq?s=21' },
+        { name: 'devcon', lightIcon: '/devcon-log.png', darkIcon: '/devcon-log.png', twitter: 'https://x.com/scroll_zkp?s=21' },
         { name: 'sui', lightIcon: '/sui.svg', darkIcon: '/sui.svg', twitter: 'https://x.com/suinetwork?s=21' },
         { name: 'lisk', lightIcon: '/lisk.svg', darkIcon: '/lisk.svg', twitter: 'https://x.com/liskhq?s=21' },
     ];
