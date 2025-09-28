@@ -15,6 +15,7 @@ const Header = () => {
     { label: 'Cohorts', href: '/cohorts' },
     { label: 'About Us', href: '/about-us' },
     { label: 'DApps', href: '/dapps' },
+    { label: "Events", href: '/events' },
     { label: 'Blogs', href: '/blogs' },
     { label: 'Contact Us', href: '/contact-us' }
   ];
