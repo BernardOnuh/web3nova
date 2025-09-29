@@ -14,17 +14,17 @@ export default function EventsSection() {
     
     const eventsData = [
         {
-            iFrameLink: "https://www.youtube.com/embed/SJvccxHv4o0?si=W6qapSHBB-W1Zk9u",
+            iFrameLink: "",
             name: "SUI on Campus FUTA workshop",
             date: "September, 2025",
             xLink: "https://x.com/web3_nova/status/1970811022782181823",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quis ea recusandae officiis doloremque veritatis nemo minima rerum perferendis quaerat, eaque ipsam itaque aperiam praesentium cupiditate quia tenetur impedit optio?"
         }, 
         {
-            iFrameLink: "https://www.youtube.com/embed/8zuDc18wyiw?si=Oe5TWQIyiOijqlzY",
+            iFrameLink: "",
             name: "SUI on Campus FUTA workshop",
             date: "August, 2025",
-            xLink: "https://x.com/socscfuta/status/1961471439124455663",
+            xLink: "https://x.com/web3_nova/status/1962782602986737994",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quis ea recusandae officiis doloremque veritatis nemo minima rerum perferendis quaerat, eaque ipsam itaque aperiam praesentium cupiditate quia tenetur impedit optio?"
         },
         {
@@ -45,14 +45,14 @@ export default function EventsSection() {
             iFrameLink: "https://www.youtube.com/embed/cOiMfXCZk9g?si=Gq8nOBcHgQi82DGr",
             name: "Base Bathches 2.0 Hacker House",
             date: "May, 2025",
-            xLink: "https://x.com/web3_nova/status/1947194757652070749",
+            xLink: "https://x.com/web3_nova/status/1919359225660047643",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quis ea recusandae officiis doloremque veritatis nemo minima rerum perferendis quaerat, eaque ipsam itaque aperiam praesentium cupiditate quia tenetur impedit optio?"
         },
         {
-            iFrameLink: "https://www.youtube.com/embed/x5bABfUCNjU?si=ZyQjCMDusdfMgl1",
+            iFrameLink: "https://www.youtube.com/embed/x5bABfUCNjU?si=iq2xOKaSLACpmr7e",
             name: "Avalanche Meetup, Akure",
             date: "April, 2025",
-            xLink: "https://x.com/web3_nova/status/1909557252517753047",
+            xLink: "https://x.com/web3_nova/status/1909868260649992327",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quis ea recusandae officiis doloremque veritatis nemo minima rerum perferendis quaerat, eaque ipsam itaque aperiam praesentium cupiditate quia tenetur impedit optio?"
         },
         {
@@ -71,7 +71,7 @@ export default function EventsSection() {
         }
     ]
     return (
-        <div className="py-16 bg-gradient-to-br from-blue-100 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+        <div className="py-16 bg-gradient-to-br from-blue-100 to-blue-50 dark:from-gray-900 dark:to-gray-800 dark:text-white">
             <section className="max-w-7xl mx-auto">
                 {eventsData.map((event, index) => (
                     <div className="grid md:grid-cols-2 grid-cols-1 gap-2 p-4" key={index}>
