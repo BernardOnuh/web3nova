@@ -63,7 +63,7 @@ export default function EventsSection() {
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quis ea recusandae officiis doloremque veritatis nemo minima rerum perferendis quaerat, eaque ipsam itaque aperiam praesentium cupiditate quia tenetur impedit optio?"
         },
         {
-            iFrameLink: "",
+            iFrameLink: "https://www.youtube.com/shorts/TgSjjvs2ky8",
             name: "Base Hacker Workshop, Akure",
             date: "October, 2024",
             xLink: "https://x.com/baseakure/status/1845184532414333066",
