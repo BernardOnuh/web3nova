@@ -1,6 +1,4 @@
-"use-client"
-
-import { Calendar } from "lucide-react";
+import { Calendar, Twitter } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function EventsSection() {
@@ -14,60 +12,53 @@ export default function EventsSection() {
     
     const eventsData = [
         {
-            iFrameLink: "",
+            iFrameLink: "https://www.youtube.com/embed/OfeXlX8r--M",
             name: "SUI on Campus FUTA workshop",
             date: "September, 2025",
             xLink: "https://x.com/web3_nova/status/1970811022782181823",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quis ea recusandae officiis doloremque veritatis nemo minima rerum perferendis quaerat, eaque ipsam itaque aperiam praesentium cupiditate quia tenetur impedit optio?"
+            description: "An engaging workshop at FUTA introducing students to SUI blockchain technology, covering smart contracts, decentralized applications, and hands-on development sessions."
         }, 
         {
-            iFrameLink: "",
-            name: "SUI on Campus FUTA workshop",
-            date: "August, 2025",
-            xLink: "https://x.com/web3_nova/status/1962782602986737994",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quis ea recusandae officiis doloremque veritatis nemo minima rerum perferendis quaerat, eaque ipsam itaque aperiam praesentium cupiditate quia tenetur impedit optio?"
-        },
-        {
-            iFrameLink: "",
+            iFrameLink: "https://www.youtube.com/embed/rOSsVTRAo00",
             name: "Farcaster Meetup, Akure",
             date: "August, 2025",
             xLink: "https://x.com/web3_nova/status/1960754143607267542",
-           description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quis ea recusandae officiis doloremque veritatis nemo minima rerum perferendis quaerat, eaque ipsam itaque aperiam praesentium cupiditate quia tenetur impedit optio?"
+           description: "A community gathering focused on Farcaster protocol, exploring decentralized social networking, building on Farcaster, and connecting with local Web3 enthusiasts in Akure."
         },
         {
-            iFrameLink: "",
+            iFrameLink: "https://www.youtube.com/embed/x5bABfUCNjU",
             name: "Avalanche Workshop, Akure",
             date: "June, 2025",
             xLink: "https://x.com/web3_nova/status/1947194757652070749",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quis ea recusandae officiis doloremque veritatis nemo minima rerum perferendis quaerat, eaque ipsam itaque aperiam praesentium cupiditate quia tenetur impedit optio?"
+            description: "Deep dive into Avalanche blockchain ecosystem, featuring subnet development, cross-chain capabilities, and practical demonstrations of building scalable dApps on Avalanche."
         },
         {
             iFrameLink: "https://www.youtube.com/embed/cOiMfXCZk9g?si=Gq8nOBcHgQi82DGr",
             name: "Base Bathches 2.0 Hacker House",
             date: "May, 2025",
             xLink: "https://x.com/web3_nova/status/1919359225660047643",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quis ea recusandae officiis doloremque veritatis nemo minima rerum perferendis quaerat, eaque ipsam itaque aperiam praesentium cupiditate quia tenetur impedit optio?"
+            description: "An intensive hacker house event on Base L2 blockchain, bringing developers together to build innovative projects, learn best practices, and compete for prizes."
         },
         {
             iFrameLink: "https://www.youtube.com/embed/x5bABfUCNjU?si=iq2xOKaSLACpmr7e",
             name: "Avalanche Meetup, Akure",
             date: "April, 2025",
             xLink: "https://x.com/web3_nova/status/1909868260649992327",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quis ea recusandae officiis doloremque veritatis nemo minima rerum perferendis quaerat, eaque ipsam itaque aperiam praesentium cupiditate quia tenetur impedit optio?"
+            description: "Community meetup exploring Avalanche's consensus mechanism, discussing DeFi opportunities, and networking with developers building on the Avalanche network."
         },
         {
             iFrameLink: "https://www.youtube.com/embed/N4Y0CBuQH3M?si=rWGq94Gs2coGo6RD",
             name: "DEVCON Workshop, Akure",
             date: "February, 2025",
             xLink: "https://x.com/web3_nova/status/1885406092647178367",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quis ea recusandae officiis doloremque veritatis nemo minima rerum perferendis quaerat, eaque ipsam itaque aperiam praesentium cupiditate quia tenetur impedit optio?"
+            description: "Post-DEVCON community workshop sharing insights from the global Ethereum conference, discussing protocol updates, new EIPs, and the future of Ethereum development."
         },
         {
-            iFrameLink: "https://www.youtube.com/shorts/TgSjjvs2ky8",
+            iFrameLink: "https://www.youtube.com/embed/TgSjjvs2ky8",
             name: "Base Hacker Workshop, Akure",
             date: "October, 2024",
             xLink: "https://x.com/baseakure/status/1845184532414333066",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quis ea recusandae officiis doloremque veritatis nemo minima rerum perferendis quaerat, eaque ipsam itaque aperiam praesentium cupiditate quia tenetur impedit optio?"
+            description: "Introduction to building on Base, Coinbase's Layer 2 solution, covering smart contract deployment, gas optimization, and integrating Base into existing Web3 applications."
         }
     ]
     return (
@@ -97,7 +88,8 @@ export default function EventsSection() {
                                     <h5 className="flex flex-row gap-1 items-center md:text-2xl text-xl"><Calendar size={20} />{event.date}</h5>
                                     <p className="md:text-xl text-xs">{event.description}</p>
                                     <a href={event?.xLink}>
-                                        <button className="bg-blue-400 rounded-3xl md:px-10 px-5 md:py-3 py-1">
+                                        <button className="bg-blue-400 hover:bg-blue-500 rounded-3xl md:px-10 px-5 md:py-3 py-1 flex items-center gap-2">
+                                            <Twitter size={20} />
                                             <p className="font-semibold">View on X</p>
                                         </button>
                                     </a>
