@@ -3,13 +3,13 @@ import { useState, useEffect } from "react"
 
 const images = [
     { src: '/avalanche-workshop.jpg', alt: 'logo' },
-    { src: '/facaster-meet.png', alt: 'logo' },
-    { src: '/base-batches-2.jpg', alt: 'logo' },
+    { src: '/sui2.jpg', alt: 'logo' },
+    { src: '/class.png', alt: 'logo' },
     { src: '/devcon.jpg', alt: 'logo' },
     { src: '/web3conference.png', alt: 'logo' },
     { src: '/sui1.jpg', alt: 'logo' },
-    { src: '/sui2.jpg', alt: 'logo' },
-    { src: '/class.png', alt: 'logo' },
+    { src: '/facaster-meet.png', alt: 'logo' },
+    { src: '/base-batches-2.jpg', alt: 'logo' },
 ]
 
 export default function EventGallery() {

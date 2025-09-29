@@ -18,56 +18,56 @@ export default function EventsSection() {
             name: "SUI on Campus FUTA workshop",
             date: "September, 2025",
             xLink: "https://x.com/web3_nova/status/1970811022782181823",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quis ea recusandae officiis doloremque veritatis nemo minima rerum perferendis quaerat, eaque ipsam itaque aperiam praesentium cupiditate quia tenetur impedit optio?"
+            description: "Web3Nova teamed up with SUI Builders to ignite a fresh wave of blockchain innovation. It was a rallying point for students to code, build, and deploy the ideas that could become the next big thing. The collaboration breathed new energy into the Sui on Campus Students Club at FUTA, setting a strong foundation for a growing community of builders."
         }, 
         {
             iFrameLink: "",
             name: "SUI on Campus FUTA workshop",
             date: "August, 2025",
             xLink: "https://x.com/web3_nova/status/1962782602986737994",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quis ea recusandae officiis doloremque veritatis nemo minima rerum perferendis quaerat, eaque ipsam itaque aperiam praesentium cupiditate quia tenetur impedit optio?"
+            description: "SUI on Campus in pattnership with Web3Nova brought together curious minds and hands-on builders in one space. Participants had the chance to: Learn essential blockchain concepts, Build functional applications, Network with peers and mentors. By the end of the sessions, several students had successfully deployed applications on the Sui Network using Move, taking their first real steps into blockchain development."
         },
         {
-            iFrameLink: "",
+            iFrameLink: "https://youtube.com/embed/rOSsVTRAo00?si=vb5Ip1C4F_vJeE3k",
             name: "Farcaster Meetup, Akure",
             date: "August, 2025",
             xLink: "https://x.com/web3_nova/status/1960754143607267542",
-           description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quis ea recusandae officiis doloremque veritatis nemo minima rerum perferendis quaerat, eaque ipsam itaque aperiam praesentium cupiditate quia tenetur impedit optio?"
+           description: "Over 200 participants joined our farcaster sessions, where we introduced them to the Farcaster ecosystem. Attendees received invites, built their first mini-apps, and explored new ways to connect onchain. We opened doors to opportunities on Farcaster not just for developers, but also for creators, community builders, and everyday users encouraging everyone to claim their place in the decentralized future."
         },
         {
             iFrameLink: "",
             name: "Avalanche Workshop, Akure",
             date: "June, 2025",
             xLink: "https://x.com/web3_nova/status/1947194757652070749",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quis ea recusandae officiis doloremque veritatis nemo minima rerum perferendis quaerat, eaque ipsam itaque aperiam praesentium cupiditate quia tenetur impedit optio?"
+            description: "In partnership with AvaxTeam1, we hosted a hands-on Avalanche Developer Workshop at FUTA. Attendees explored the ecosystem through L1 deployment with AvaCloud, NFT minting on the Testnet, and smart contract development wrapping up with a fun Paint & Sip session. The event perfectly blended technical learning and community bonding, leaving builders inspired for the next leap in Web3."
         },
         {
             iFrameLink: "https://www.youtube.com/embed/cOiMfXCZk9g?si=Gq8nOBcHgQi82DGr",
             name: "Base Bathches 2.0 Hacker House",
             date: "May, 2025",
             xLink: "https://x.com/web3_nova/status/1919359225660047643",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quis ea recusandae officiis doloremque veritatis nemo minima rerum perferendis quaerat, eaque ipsam itaque aperiam praesentium cupiditate quia tenetur impedit optio?"
+            description: "Base Batches Workshop brought together passionate learners and builders eager to explore the Base blockchain. It was a session of creativity and teamwork where participants Formed teams Shared and refined ideas. Started building real projects. The energy in the room was electric, setting the tone for the next wave of Base-powered innovation."
         },
         {
             iFrameLink: "https://www.youtube.com/embed/x5bABfUCNjU?si=iq2xOKaSLACpmr7e",
             name: "Avalanche Meetup, Akure",
             date: "April, 2025",
             xLink: "https://x.com/web3_nova/status/1909868260649992327",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quis ea recusandae officiis doloremque veritatis nemo minima rerum perferendis quaerat, eaque ipsam itaque aperiam praesentium cupiditate quia tenetur impedit optio?"
+            description: "In partnership with AvaxNG, we hosted a high-energy onboarding program for builders and creatives. The event blended learning and networking, featuring: Engaging sessions introducing builders to Web3 Real-time opportunities to connect and collaborate. An atmosphere filled with creativity and inspiration. This meetup gave participants the momentum to take their first steps into the Avalanche ecosystem."
         },
         {
             iFrameLink: "https://www.youtube.com/embed/N4Y0CBuQH3M?si=rWGq94Gs2coGo6RD",
             name: "DEVCON Workshop, Akure",
             date: "February, 2025",
             xLink: "https://x.com/web3_nova/status/1885406092647178367",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quis ea recusandae officiis doloremque veritatis nemo minima rerum perferendis quaerat, eaque ipsam itaque aperiam praesentium cupiditate quia tenetur impedit optio?"
+            description: "The Devcon Workshop created a space for builders to strengthen their technical knowledge. Participants explored: Core blockchain concepts Transaction processing flows Fundamentals of swap systems. By the end of the workshop, builders gained the skills and perspective needed to start designing financial applications in Web3."
         },
         {
             iFrameLink: "",
             name: "Base Hacker Workshop, Akure",
             date: "October, 2024",
             xLink: "https://x.com/baseakure/status/1845184532414333066",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quis ea recusandae officiis doloremque veritatis nemo minima rerum perferendis quaerat, eaque ipsam itaque aperiam praesentium cupiditate quia tenetur impedit optio?"
+            description: "builders rallied around the Base blockchain to put ideas into action. With extra hours, focus, and passion, participants poured their energy into transforming concepts into real applications. captured the determination and creativity that define the Web3 builder community."
         }
     ]
     return (
