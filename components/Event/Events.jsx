@@ -14,7 +14,7 @@ export default function EventsSection() {
     
     const eventsData = [
         {
-            iFrameLink: "",
+            iFrameLink: "https://www.youtube.com/embed/OfeXlX8r--M?si=wtPZh0dc_PogBNIb",
             name: "SUI on Campus FUTA workshop",
             date: "September, 2025",
             xLink: "https://x.com/web3_nova/status/1970811022782181823",
